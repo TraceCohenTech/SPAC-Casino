@@ -1,66 +1,86 @@
 import { motion } from 'framer-motion';
-import { TrendingDown, AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
 
 export default function Header() {
-  const stats = [
-    { value: '-74%', label: 'Avg. Return (Merged SPACs)', color: 'text-accent' },
-    { value: '6 / 10', label: 'SPACs Completed Mergers', color: 'text-accent' },
-    { value: '4', label: 'Liquidated (Capital Returned)', color: 'text-gold' },
-    { value: '2', label: 'Bankrupt / Taken Private', color: 'text-accent' },
-    { value: '1', label: 'Positive Return (SOFI)', color: 'text-green' },
-  ];
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0a0a0e] via-[#12121a] to-[#1a0a0a] p-8 md:p-12 border border-border"
+    <motion.header
+      initial={{ opacity: 0, scale: 0.98 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className="relative overflow-hidden rounded-3xl bg-[#1a1a1a] text-white"
     >
-      <div className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(255,59,59,0.08)_0%,transparent_70%)] pointer-events-none" />
+      <div className="relative z-10 px-10 py-12 lg:py-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="inline-flex items-center gap-2 bg-[#ff3b3b] text-white text-xs font-bold uppercase tracking-widest rounded-full px-4 py-1.5 mb-6"
+          >
+            <span className="w-2 h-2 rounded-full bg-white/30 animate-pulse" />
+            Social Capital Hedosophia &middot; SPAC Performance
+          </motion.div>
 
-      <div className="relative z-10">
-        <div className="flex items-center gap-2 mb-4">
-          <div className="flex items-center gap-1.5 px-3 py-1 bg-accent/15 border border-accent/30 rounded-full text-[11px] font-medium tracking-widest uppercase text-accent">
-            <TrendingDown size={13} />
-            Social Capital Hedosophia
-          </div>
-        </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-5">
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="block"
+            >
+              The
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.55 }}
+              className="block text-[#ff3b3b]"
+            >
+              SPACtacular Casino
+            </motion.span>
+          </h1>
 
-        <h1 className="text-5xl md:text-8xl font-black tracking-tight leading-[0.9] mb-2">
-          THE
-          <br />
-          <span className="text-accent">SPACtacular Casino</span>
-        </h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="text-white/50 text-lg leading-relaxed max-w-lg"
+          >
+            Complete performance record of all 10 Social Capital SPACs + 8 PIPE deals. Merger dates through 2022. Prices as of Mar 2026.
+          </motion.p>
 
-        <p className="text-sm text-muted mt-4 max-w-2xl">
-          Complete performance record of all 10 Social Capital SPACs + 8 PIPE deals. Merger dates through 2022. Prices as of Mar 2026.
-        </p>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className="flex flex-wrap gap-6 mt-8"
+          >
+            {[
+              { value: '-74%', label: 'Avg. Return', color: 'text-[#ff3b3b]' },
+              { value: '6 / 10', label: 'Mergers Done', color: 'text-white' },
+              { value: '4', label: 'Liquidated', color: 'text-[#ffd60a]' },
+              { value: '1', label: 'Positive (SOFI)', color: 'text-[#00d97e]' },
+            ].map((s) => (
+              <div key={s.label} className="text-center">
+                <p className={`text-3xl font-bold ${s.color}`}>{s.value}</p>
+                <p className="text-[11px] text-white/40 uppercase tracking-wider mt-1">{s.label}</p>
+              </div>
+            ))}
+          </motion.div>
 
-        <div className="flex flex-wrap gap-6 mt-8">
-          {stats.map((s) => (
-            <div key={s.label} className="flex flex-col gap-1">
-              <span className={`text-3xl font-black tracking-tight ${s.color}`}>{s.value}</span>
-              <span className="text-[10px] tracking-[2px] uppercase text-muted">{s.label}</span>
-            </div>
-          ))}
-        </div>
-
-        <div className="flex flex-wrap gap-3 mt-8 text-xs">
-          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-accent/10 border border-accent/20 rounded-lg text-accent">
-            <XCircle size={12} /> 2 Bankrupt
-          </div>
-          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-accent2/10 border border-accent2/20 rounded-lg text-accent2">
-            <AlertTriangle size={12} /> 3 Down 70%+
-          </div>
-          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-gold/10 border border-gold/20 rounded-lg text-gold">
-            <AlertTriangle size={12} /> 4 Liquidated
-          </div>
-          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-green/10 border border-green/20 rounded-lg text-green">
-            <CheckCircle size={12} /> 1 Positive (SOFI)
-          </div>
-        </div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.1 }}
+            className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-white/40"
+          >
+            Not financial advice &middot; Returns based on $10 SPAC listing price
+          </motion.div>
+        </motion.div>
       </div>
-    </motion.div>
+    </motion.header>
   );
 }

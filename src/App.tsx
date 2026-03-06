@@ -10,8 +10,8 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-bg">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-8">
+    <div className="min-h-screen bg-[#f5f5f7]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-14">
         <TweetBanner />
         <Header />
         <Disclaimer />

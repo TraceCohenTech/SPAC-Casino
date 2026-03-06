@@ -11,12 +11,12 @@ export default function TweetBanner() {
       <img
         src="/tweet-casino.png"
         alt="Chamath tweet: No crying in the casino"
-        className="rounded-xl border border-border shadow-lg shadow-black/40 max-w-xs sm:max-w-sm w-full"
+        className="rounded-2xl shadow-lg shadow-black/10 max-w-xs sm:max-w-sm w-full"
       />
       <img
         src="/tweet-capital-losses.png"
         alt="Chamath tweet: Then you generated capital losses"
-        className="rounded-xl border border-border shadow-lg shadow-black/40 max-w-xs sm:max-w-sm w-full"
+        className="rounded-2xl shadow-lg shadow-black/10 max-w-xs sm:max-w-sm w-full"
       />
     </motion.div>
   );

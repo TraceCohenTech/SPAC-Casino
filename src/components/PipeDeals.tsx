@@ -1,42 +1,36 @@
 import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
 import { pipeDeals } from '../data/spacs';
+import SectionHeader from './SectionHeader';
 
 function Pill({ value, type }: { value: string; type: 'pos' | 'neg' | 'neutral' }) {
   const cls = type === 'pos'
-    ? 'bg-green/10 text-green'
+    ? 'bg-[#00d97e]/10 text-[#00d97e]'
     : type === 'neg'
-    ? 'bg-accent/10 text-accent'
-    : 'bg-muted/10 text-muted';
-  return <span className={`inline-block px-2 py-0.5 rounded text-[10px] font-mono ${cls}`}>{value}</span>;
+    ? 'bg-[#ff3b3b]/10 text-[#ff3b3b]'
+    : 'bg-[#aeaeb2]/10 text-[#aeaeb2]';
+  return <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold ${cls}`}>{value}</span>;
 }
 
 export default function PipeDeals() {
   const [ref, inView] = useInView<HTMLDivElement>();
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 16 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="text-[10px] tracking-[4px] uppercase text-accent mb-4 font-medium">
-        PIPE Deals — Chamath as Co-Investor (Not Sponsor)
-      </div>
-
-      <div className="bg-surface border border-border rounded-xl overflow-hidden">
-        <div className="p-5 border-b border-border">
-          <h3 className="text-lg font-bold">Social Capital PIPE Investments</h3>
-          <p className="text-[11px] text-muted mt-1">Chamath invested in these SPACs as a PIPE participant, not the sponsor. Performance from $10 baseline.</p>
-        </div>
-
+    <section>
+      <SectionHeader title="PIPE Deals" subtitle="Social Capital as co-investor (not sponsor). Performance from $10 baseline." />
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 16 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5 }}
+        className="glass overflow-hidden"
+      >
         <div className="overflow-x-auto">
-          <table className="w-full text-xs">
+          <table className="w-full text-[13px]">
             <thead>
-              <tr className="bg-surface2">
+              <tr className="border-b border-black/5">
                 {['Company', 'Ticker', 'Sector', 'Return from $10', 'Status', 'Notes'].map(h => (
-                  <th key={h} className="px-4 py-3 text-left text-[10px] tracking-[1.5px] uppercase text-muted border-b border-border whitespace-nowrap">{h}</th>
+                  <th key={h} className="px-5 py-3.5 text-left text-[10px] font-semibold text-[#aeaeb2] uppercase tracking-wider">{h}</th>
                 ))}
               </tr>
             </thead>
@@ -46,27 +40,24 @@ export default function PipeDeals() {
                 const statusType = d.status === 'Active' ? 'pos' : d.status === 'Delisted' ? 'neutral' : 'neg';
 
                 return (
-                  <tr key={d.ticker} className="border-b border-white/[0.04] hover:bg-white/[0.03] transition-colors">
-                    <td className="px-4 py-3 font-semibold">{d.name}</td>
-                    <td className="px-4 py-3 text-lg font-black tracking-wide">{d.ticker}</td>
-                    <td className="px-4 py-3 text-muted">{d.sector}</td>
-                    <td className="px-4 py-3">
-                      <Pill
-                        value={`${isPos ? '+' : ''}${d.returnPct}%`}
-                        type={isPos ? 'pos' : 'neg'}
-                      />
+                  <tr key={d.ticker} className="border-b border-black/[0.03] hover:bg-black/[0.015] transition-colors">
+                    <td className="px-5 py-3.5 font-semibold text-[#1d1d1f]">{d.name}</td>
+                    <td className="px-5 py-3.5 text-lg font-bold text-[#1d1d1f] tracking-tight">{d.ticker}</td>
+                    <td className="px-5 py-3.5 text-[#6e6e73]">{d.sector}</td>
+                    <td className="px-5 py-3.5">
+                      <Pill value={`${isPos ? '+' : ''}${d.returnPct}%`} type={isPos ? 'pos' : 'neg'} />
                     </td>
-                    <td className="px-4 py-3">
+                    <td className="px-5 py-3.5">
                       <Pill value={d.status} type={statusType} />
                     </td>
-                    <td className="px-4 py-3 text-[10px] text-muted">{d.notes}</td>
+                    <td className="px-5 py-3.5 text-[11px] text-[#aeaeb2]">{d.notes}</td>
                   </tr>
                 );
               })}
             </tbody>
           </table>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </section>
   );
 }
