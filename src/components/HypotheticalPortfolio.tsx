@@ -48,7 +48,7 @@ export default function HypotheticalPortfolio() {
   return (
     <section>
       <SectionHeader title="Hypothetical Portfolio" subtitle={`$${(AMOUNT / 1000).toFixed(0)}K in each of the 6 merged SPACs ($${(totalInvested / 1000).toFixed(0)}K total)`} />
-      <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-3">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

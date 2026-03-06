@@ -101,7 +101,7 @@ export default function InvestmentTable() {
       </motion.div>
 
       {/* Totals */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mt-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mt-4">
         {[
           { label: `Total Invested (${amount === 1000 ? '$1K' : '$10K'} x 6)`, value: `$${merged6Invested.toLocaleString()}`, color: 'text-[#1d1d1f]' },
           { label: 'Total Value Now', value: `$${merged6Total.toLocaleString()}`, color: 'text-[#ff3b3b]' },
@@ -110,7 +110,7 @@ export default function InvestmentTable() {
           { label: 'vs. SPY Same $', value: `$${Math.round(spyTotal).toLocaleString()}`, color: 'text-[#00d97e]' },
         ].map((t) => (
           <div key={t.label} className="glass text-center py-4 px-3">
-            <p className="text-[10px] font-medium text-[#aeaeb2] uppercase tracking-wider mb-1">{t.label}</p>
+            <p className="text-[10px] font-semibold text-[#6e6e73] uppercase tracking-wider mb-1">{t.label}</p>
             <p className={`text-xl font-bold ${t.color}`}>{t.value}</p>
           </div>
         ))}

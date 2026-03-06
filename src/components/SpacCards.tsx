@@ -32,7 +32,7 @@ export default function SpacCards() {
   return (
     <section>
       <SectionHeader title="Individual SPAC Profiles" subtitle="All 10 Social Capital SPACs at a glance" />
-      <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {spacs.map((s, i) => (
           <motion.div
             key={s.ticker}
