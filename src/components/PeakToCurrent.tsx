@@ -48,7 +48,7 @@ export default function PeakToCurrent() {
               </div>
               <div className="w-20 sm:w-32 shrink-0 text-right">
                 <p className="text-xs font-bold text-[#1d1d1f]">{s.drawdown.toFixed(0)}%</p>
-                <p className="text-[10px] text-[#aeaeb2] hidden sm:block">
+                <p className="text-[10px] text-[#6e6e73] hidden sm:block">
                   ${s.peakPrice} &rarr; ${s.currentPrice}
                 </p>
               </div>

@@ -97,7 +97,7 @@ export default function HypotheticalPortfolio() {
           className="glass p-6"
         >
           <h3 className="text-lg font-bold text-[#1d1d1f] mb-1">What If You Invested ${(totalInvested / 1000).toFixed(0)}K Instead In...</h3>
-          <p className="text-[13px] text-[#aeaeb2] mb-5">The same ${(totalInvested / 1000).toFixed(0)}K, different destinations.</p>
+          <p className="text-[13px] text-[#6e6e73] mb-5">The same ${(totalInvested / 1000).toFixed(0)}K, different destinations.</p>
           <div className="space-y-3">
             {alternatives.map((alt, i) => {
               const pct = (alt.value / totalInvested) * 100;

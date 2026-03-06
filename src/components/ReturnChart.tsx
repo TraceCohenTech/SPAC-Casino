@@ -28,7 +28,7 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Array<
   return (
     <div className="bg-white rounded-2xl shadow-xl border border-black/5 p-4 min-w-[200px]">
       <p className="font-bold text-[#1d1d1f] text-sm">{d.name}</p>
-      <p className="text-[11px] text-[#aeaeb2] mb-3">{d.ticker} &middot; via {d.spac}</p>
+      <p className="text-[11px] text-[#6e6e73] mb-3">{d.ticker} &middot; via {d.spac}</p>
       <div className="space-y-1 text-[13px]">
         <div className="flex justify-between"><span className="text-[#6e6e73]">Return</span><span className="font-semibold" style={{ color }}>{d.returnPct > 0 ? '+' : ''}{d.returnPct}%</span></div>
         <div className="flex justify-between"><span className="text-[#6e6e73]">Price</span><span className="text-[#1d1d1f]">~${d.currentPrice}</span></div>
@@ -50,7 +50,7 @@ export default function ReturnChart() {
         initial={{ opacity: 0, y: 16 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
-        className="glass p-6"
+        className="glass p-4 sm:p-6"
       >
         <ResponsiveContainer width="100%" height={340}>
           <BarChart data={chartData} margin={{ top: 20, right: 10, left: 10, bottom: 5 }}>

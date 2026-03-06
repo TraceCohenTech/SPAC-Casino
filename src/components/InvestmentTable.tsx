@@ -55,7 +55,7 @@ export default function InvestmentTable() {
             <thead>
               <tr className="border-b border-black/5">
                 {['Company', 'SPAC', 'Merged', 'Return', '~Price', `$${amount.toLocaleString()} Now`, 'Gain/Loss', 'Status'].map(h => (
-                  <th key={h} className="px-5 py-3.5 text-left text-[10px] font-semibold text-[#aeaeb2] uppercase tracking-wider">{h}</th>
+                  <th key={h} className="px-5 py-3.5 text-left text-[10px] font-semibold text-[#6e6e73] uppercase tracking-wider">{h}</th>
                 ))}
               </tr>
             </thead>
@@ -69,7 +69,7 @@ export default function InvestmentTable() {
                   <tr key={s.ticker} className="border-b border-black/[0.03] hover:bg-black/[0.015] transition-colors">
                     <td className="px-5 py-3.5">
                       <span className="font-semibold text-[#1d1d1f]">{s.name}</span>
-                      <span className="block text-[11px] text-[#aeaeb2]">{s.sector}</span>
+                      <span className="block text-[11px] text-[#6e6e73]">{s.sector}</span>
                     </td>
                     <td className="px-5 py-3.5 text-[#6e6e73]">{s.spac}</td>
                     <td className="px-5 py-3.5 text-[#6e6e73]">{s.merged}</td>

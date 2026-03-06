@@ -46,7 +46,7 @@ export default function SpacCards() {
               <div>
                 <p className="text-2xl font-bold text-[#1d1d1f] tracking-tight">{s.ticker}</p>
                 <p className="text-sm font-semibold text-[#1d1d1f] mt-0.5">{s.name}</p>
-                <p className="text-[11px] text-[#aeaeb2] uppercase tracking-wider">{s.sector}</p>
+                <p className="text-[11px] text-[#6e6e73] uppercase tracking-wider">{s.sector}</p>
               </div>
               <span className={getBadge(s)}>{s.statusLabel}</span>
             </div>
@@ -54,31 +54,31 @@ export default function SpacCards() {
             <p className={`text-4xl font-bold ${getReturnColor(s)} mb-1`}>
               {s.returnPct > 0 ? '+' : ''}{s.returnPct}%
             </p>
-            <p className="text-[11px] text-[#aeaeb2] mb-4">from $10 SPAC price &middot; ~${s.currentPrice} today</p>
+            <p className="text-[11px] text-[#6e6e73] mb-4">from $10 SPAC price &middot; ~${s.currentPrice} today</p>
 
             <div className="grid grid-cols-2 gap-3 pt-4 border-t border-black/5">
               <div>
-                <p className="text-[10px] text-[#aeaeb2] uppercase tracking-wider mb-0.5">SPAC Vehicle</p>
+                <p className="text-[10px] text-[#6e6e73] uppercase tracking-wider mb-0.5">SPAC Vehicle</p>
                 <p className="text-[13px] font-medium text-[#1d1d1f]">{s.spac}</p>
               </div>
               <div>
-                <p className="text-[10px] text-[#aeaeb2] uppercase tracking-wider mb-0.5">Merger</p>
+                <p className="text-[10px] text-[#6e6e73] uppercase tracking-wider mb-0.5">Merger</p>
                 <p className="text-[13px] font-medium text-[#1d1d1f]">{s.merged}</p>
               </div>
               <div>
-                <p className="text-[10px] text-[#aeaeb2] uppercase tracking-wider mb-0.5">$1K &rarr; Now</p>
+                <p className="text-[10px] text-[#6e6e73] uppercase tracking-wider mb-0.5">$1K &rarr; Now</p>
                 <p className={`text-[13px] font-semibold ${s.returnPct >= 0 ? 'text-[#00d97e]' : 'text-[#ff3b3b]'}`}>
                   ${Math.round(1000 * (1 + s.returnPct / 100)).toLocaleString()}
                 </p>
               </div>
               <div>
-                <p className="text-[10px] text-[#aeaeb2] uppercase tracking-wider mb-0.5">$10K &rarr; Now</p>
+                <p className="text-[10px] text-[#6e6e73] uppercase tracking-wider mb-0.5">$10K &rarr; Now</p>
                 <p className={`text-[13px] font-semibold ${s.returnPct >= 0 ? 'text-[#00d97e]' : 'text-[#ff3b3b]'}`}>
                   ${Math.round(10000 * (1 + s.returnPct / 100)).toLocaleString()}
                 </p>
               </div>
               <div className="col-span-2">
-                <p className="text-[10px] text-[#aeaeb2] uppercase tracking-wider mb-0.5">Notes</p>
+                <p className="text-[10px] text-[#6e6e73] uppercase tracking-wider mb-0.5">Notes</p>
                 <p className="text-[12px] text-[#6e6e73] leading-relaxed">{s.notes}</p>
               </div>
             </div>

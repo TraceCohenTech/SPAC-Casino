@@ -22,7 +22,7 @@ function CustomTooltip({ active, payload, label }: { active?: boolean; payload?:
   if (!active || !payload?.length) return null;
   return (
     <div className="bg-white rounded-2xl shadow-xl border border-black/5 p-4 min-w-[180px]">
-      <p className="text-xs font-semibold text-[#aeaeb2] mb-2">{label}</p>
+      <p className="text-xs font-semibold text-[#6e6e73] mb-2">{label}</p>
       {payload.map(p => (
         <div key={p.dataKey} className="flex justify-between gap-4 text-[13px]">
           <span style={{ color: p.color }} className="font-semibold">{p.dataKey}</span>
@@ -72,7 +72,8 @@ export default function PriceTimeline() {
           ))}
         </div>
 
-        <ResponsiveContainer width="100%" height={360}>
+        <div className="h-[260px] sm:h-[360px]">
+        <ResponsiveContainer width="100%" height="100%">
           <LineChart data={timelineData} margin={{ top: 10, right: 10, left: 0, bottom: 5 }}>
             <XAxis
               dataKey="date"
@@ -102,6 +103,7 @@ export default function PriceTimeline() {
             ))}
           </LineChart>
         </ResponsiveContainer>
+        </div>
       </motion.div>
     </section>
   );

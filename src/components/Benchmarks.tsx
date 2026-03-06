@@ -27,7 +27,7 @@ export default function Benchmarks() {
             <p className="text-xs font-medium text-[#6e6e73] uppercase tracking-wider mb-2">{b.label}</p>
             <p className="text-sm font-semibold text-[#1d1d1f] mb-1">{b.name}</p>
             <p className="text-3xl font-bold text-[#00d97e]">{b.returnPct}</p>
-            <p className="text-[11px] text-[#aeaeb2] mt-1">{b.period}</p>
+            <p className="text-[11px] text-[#6e6e73] mt-1">{b.period}</p>
             <p className="text-[12px] text-[#6e6e73] mt-3">
               $1K &rarr; <span className="font-semibold text-[#1d1d1f]">{b.k1}</span>
               <span className="mx-1.5">&middot;</span>

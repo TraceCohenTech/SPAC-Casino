@@ -44,7 +44,7 @@ export default function BubbleChart() {
         initial={{ opacity: 0, y: 16 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
-        className="glass p-6"
+        className="glass p-4 sm:p-6"
       >
         <ResponsiveContainer width="100%" height={380}>
           <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 0 }}>
@@ -52,7 +52,7 @@ export default function BubbleChart() {
               dataKey="x"
               type="number"
               domain={['dataMin - 5000000000', 'dataMax + 5000000000']}
-              tick={{ fill: '#aeaeb2', fontSize: 10 }}
+              tick={{ fill: '#6e6e73', fontSize: 10 }}
               axisLine={false}
               tickLine={false}
               tickFormatter={(v: number) => {
@@ -64,7 +64,7 @@ export default function BubbleChart() {
             <YAxis
               dataKey="y"
               type="number"
-              tick={{ fill: '#aeaeb2', fontSize: 11 }}
+              tick={{ fill: '#6e6e73', fontSize: 11 }}
               axisLine={false}
               tickLine={false}
               tickFormatter={(v: number) => `${v}%`}

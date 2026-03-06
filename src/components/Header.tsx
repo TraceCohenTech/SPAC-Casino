@@ -26,24 +26,14 @@ export default function Header() {
               Social Capital Hedosophia
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold tracking-tight leading-[1.05] mb-4">
-              <motion.span
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="block"
-              >
-                The
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.55 }}
-                className="block text-[#ff3b3b]"
-              >
-                SPACtacular Casino
-              </motion.span>
-            </h1>
+            <motion.h1
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold tracking-tight leading-[1.1] mb-4"
+            >
+              The <span className="text-[#ff3b3b]">SPACtacular Casino</span>
+            </motion.h1>
 
             <motion.p
               initial={{ opacity: 0 }}

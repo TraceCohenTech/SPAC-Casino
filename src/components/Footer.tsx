@@ -17,7 +17,7 @@ export default function Footer() {
       </div>
 
       <div className="text-center space-y-3">
-        <p className="text-[12px] text-[#aeaeb2]">
+        <p className="text-[12px] text-[#6e6e73]">
           Independent analysis &middot; For educational purposes only
         </p>
         <div className="flex items-center justify-center gap-5 text-sm">

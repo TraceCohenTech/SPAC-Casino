@@ -30,7 +30,7 @@ export default function PipeDeals() {
             <thead>
               <tr className="border-b border-black/5">
                 {['Company', 'Ticker', 'Sector', 'Return from $10', 'Status', 'Notes'].map(h => (
-                  <th key={h} className="px-5 py-3.5 text-left text-[10px] font-semibold text-[#aeaeb2] uppercase tracking-wider">{h}</th>
+                  <th key={h} className="px-5 py-3.5 text-left text-[10px] font-semibold text-[#6e6e73] uppercase tracking-wider">{h}</th>
                 ))}
               </tr>
             </thead>
@@ -50,7 +50,7 @@ export default function PipeDeals() {
                     <td className="px-5 py-3.5">
                       <Pill value={d.status} type={statusType} />
                     </td>
-                    <td className="px-5 py-3.5 text-[11px] text-[#aeaeb2]">{d.notes}</td>
+                    <td className="px-5 py-3.5 text-[11px] text-[#6e6e73]">{d.notes}</td>
                   </tr>
                 );
               })}

@@ -9,7 +9,6 @@ export default function ScoreCard() {
   const mergedCount = mergedSpacs.length;
   const liquidatedCount = spacs.filter(s => s.status === 'liquidated').length;
   const positiveCount = mergedSpacs.filter(s => s.returnPct > 0).length;
-  const negativeCount = mergedSpacs.filter(s => s.returnPct < 0).length;
   const avgReturn = mergedSpacs.reduce((s, v) => s + v.returnPct, 0) / mergedCount;
   const medianReturn = [...mergedSpacs].sort((a, b) => a.returnPct - b.returnPct)[Math.floor(mergedCount / 2)].returnPct;
   const bestSpac = mergedSpacs.reduce((a, b) => a.returnPct > b.returnPct ? a : b);
@@ -24,7 +23,7 @@ export default function ScoreCard() {
     { label: 'Best', value: bestSpac.ticker, sub: `+${bestSpac.returnPct}%`, color: 'text-[#00d97e]' },
     { label: 'Worst', value: worstSpac.ticker, sub: `${worstSpac.returnPct}%`, color: 'text-[#ff3b3b]' },
     { label: 'Capital Raised', value: `$${(totalCapital / 1000).toFixed(1)}B`, sub: 'Across all 10 SPACs', color: 'text-[#1d1d1f]' },
-    { label: 'Down 90%+', value: `${negativeCount}`, sub: `of ${mergedCount} merged SPACs`, color: 'text-[#ff3b3b]' },
+    { label: 'Down 90%+', value: `${mergedSpacs.filter(s => s.returnPct <= -90).length}`, sub: `of ${mergedCount} merged SPACs`, color: 'text-[#ff3b3b]' },
     { label: 'PIPE Deals', value: `${pipeDeals.length}`, sub: `${pipePositive} up, ${pipeBankrupt} bankrupt`, color: 'text-[#1d1d1f]' },
   ];
 
