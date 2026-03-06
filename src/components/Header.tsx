@@ -49,7 +49,7 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.65 }}
-              className="text-[17px] italic text-white/70 mb-5"
+              className="text-[17px] italic text-white mb-5"
             >
               "There is no crying in the casino."
             </motion.p>
@@ -58,7 +58,7 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.75 }}
-              className="text-white/50 text-[15px] leading-relaxed max-w-md"
+              className="text-white/90 text-[15px] leading-relaxed max-w-md"
             >
               Complete performance record of all 10 Social Capital SPACs + 8 PIPE deals. Prices as of March 2026.
             </motion.p>
@@ -67,7 +67,7 @@ export default function Header() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.9 }}
-              className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-white/40"
+              className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 border border-white/20 text-xs text-white/80"
             >
               Not financial advice &middot; Returns from $10 SPAC price
             </motion.div>
